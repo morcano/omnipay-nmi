@@ -3,6 +3,7 @@
 namespace Omnipay\NMI\Message;
 
 use Omnipay\Common\CreditCard;
+use Omnipay\NMI\Traits\Loggable;
 use RuntimeException;
 use SimpleXMLElement;
 
@@ -11,6 +12,8 @@ use SimpleXMLElement;
  */
 abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
 {
+    use Loggable;
+
     /**
      * @var string
      */
@@ -253,8 +256,9 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
     }
 
     /**
-     * @param array
+     * @param array $data
      * @return \Omnipay\NMI\Message\ThreeStepRedirectResponse
+     * @throws \Exception
      */
     public function sendData($data)
     {
@@ -271,9 +275,10 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
             $document->asXML()
         );
 
-        $xml = static::xmlDecode($httpResponse);
+        $this->response = new ThreeStepRedirectResponse($this, static::xmlDecode($httpResponse));
+        $this->logAPICall('POST', $this->getEndpoint(), $data, $httpResponse, $this->response);
 
-        return $this->response = new ThreeStepRedirectResponse($this, $xml);
+        return $this->response;
     }
 
     /**

@@ -26,7 +26,8 @@
         "psr-4": { "Omnipay\\NMI\\" : "src/" }
     },
     "require": {
-        "league/omnipay": "^3"
+        "league/omnipay": "^3",
+        "monolog/monolog": "^1.23"
     },
     "extra": {
         "branch-alias": {

@@ -238,6 +238,21 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
         return $this->setParameter('xid', $value);
     }
 
+    public function getIsLoggingEnabled()
+    {
+        return $this->getParameter('isLoggingEnabled') ?? false;
+    }
+
+    public function setIsLoggingEnabled($value)
+    {
+        return $this->setParameter('isLoggingEnabled', $value);
+    }
+
+    public function isLoggingEnabled()
+    {
+        return $this->getIsLoggingEnabled();
+    }
+
     protected function getBaseData()
     {
         $data = array();
