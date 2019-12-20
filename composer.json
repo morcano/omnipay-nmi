@@ -1,5 +1,5 @@
 {
-    "name": "nerdmedia/omnipay-nmi",
+    "name": "morcano/omnipay-nmi",
     "type": "library",
     "description": "NMI (Network Merchants Inc.) driver for the Omnipay PHP payment processing library",
     "keywords": [
@@ -14,12 +14,12 @@
         "network",
         "inc"
     ],
-    "homepage": "https://github.com/nerdmedia/omnipay-nmi",
+    "homepage": "https://github.com/morcano/omnipay-nmi",
     "license": "MIT",
     "authors": [
         {
-            "name": "Steve Bazemore",
-            "email": "steve@nerdmedia.com"
+            "name": "Vladimir Kravchenko",
+            "email": "morcano91@gmail.com"
         }
     ],
     "autoload": {

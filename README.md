@@ -10,7 +10,7 @@ processing library for PHP 5.3+. This package implements [NMI](https://www.nmi.c
 Omnipay is installed via [Composer](http://getcomposer.org/). To install, simply require `nerdmedia/omnipay-nmi` with Composer:
 
 ```
-composer require nerdmedia/omnipay-nmi:"3.x@dev"
+composer require morcano/omnipay-nmi:"3.x@dev"
 ```
 
 ## Basic Usage
