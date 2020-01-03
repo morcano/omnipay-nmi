@@ -1,10 +1,11 @@
 <?php
-namespace Omnipay\NMI\Message;
+
+namespace Omnipay\NMI\Message\DirectPost;
 
 /**
  * NMI Abstract Request
  */
-abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
+abstract class DirectPostAbstractRequest extends \Omnipay\NMI\Message\NetworkMerchantsAbstractRequest
 {
     protected $endpoint = 'https://secure.nmi.com/api/transact.php';
 
@@ -26,16 +27,6 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
     public function setPassword($value)
     {
         return $this->setParameter('password', $value);
-    }
-
-    public function getProcessorId()
-    {
-        return $this->getParameter('processor_id');
-    }
-
-    public function setProcessorId($value)
-    {
-        return $this->setParameter('processor_id', $value);
     }
 
     public function getAuthorizationCode()
@@ -393,7 +384,7 @@ abstract class AbstractRequest extends \Omnipay\Common\Message\AbstractRequest
             http_build_query($data, '', '&')
         );
 
-        return $this->response = new DirectPostResponse($this, (string) $httpResponse->getBody());
+        return $this->response = new Response($this, (string) $httpResponse->getBody());
     }
 
     public function setEndpoint($value)

@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\NMI\Message;
+namespace Omnipay\NMI\Message\DirectPost;
 
 use Omnipay\Tests\TestCase;
 
@@ -9,7 +9,7 @@ class DirectPostResponseTest extends TestCase
     public function testAuthorizeSuccess()
     {
         $httpResponse = $this->getMockHttpResponse('DirectPostAuthSuccess.txt');
-        $response = new DirectPostResponse($this->getMockRequest(), $httpResponse->getBody());
+        $response = new Response($this->getMockRequest(), $httpResponse->getBody());
         $this->assertTrue($response->isSuccessful());
         $this->assertSame('2577708057', $response->getTransactionReference());
         $this->assertSame('SUCCESS', $response->getMessage());
@@ -24,7 +24,7 @@ class DirectPostResponseTest extends TestCase
     public function testAuthorizeFailure()
     {
         $httpResponse = $this->getMockHttpResponse('DirectPostAuthFailure.txt');
-        $response = new DirectPostResponse($this->getMockRequest(), $httpResponse->getBody());
+        $response = new Response($this->getMockRequest(), $httpResponse->getBody());
         $this->assertFalse($response->isSuccessful());
         $this->assertSame('2577711599', $response->getTransactionReference());
         $this->assertSame('DECLINE', $response->getMessage());

@@ -1,4 +1,5 @@
 <?php
+
 namespace Omnipay\NMI;
 
 use Omnipay\Tests\GatewayTestCase;
@@ -227,5 +228,23 @@ class DirectPostGatewayTest extends GatewayTestCase
         $this->assertFalse($response->isSuccessful());
         $this->assertSame('000000000', $response->getCardReference());
         $this->assertSame('Invalid Customer Vault Id REFID:3150033421', $response->getMessage());
+    }
+
+    public function testCreateRecurringPlan()
+    {
+        $this->setMockHttpResponse('DirectPostCreateRecurringPlanSuccess.txt');
+
+        $response = $this->gateway->createRecurringPlan([
+            'recurring' => 'add_plan',
+            'plan_payments' => 0,
+            'plan_name' => 'test',
+            'plan_amount' => 1,
+            'plan_id' => 1,
+            'month_frequency' => 1,
+            'day_of_month' => 1
+        ])->send();
+
+        $this->assertTrue($response->isSuccessful());
+        $this->assertSame('Plan Added', $response->getMessage());
     }
 }

@@ -1,14 +1,19 @@
 <?php
 
-namespace Omnipay\NMI\Message;
+namespace Omnipay\NMI\Message\DirectPost;
 
 /**
 * NMI Direct Post Create Card Request
 */
-class DirectPostCreateCardRequest extends AbstractRequest
+class CreateCardRequest extends DirectPostAbstractRequest
 {
     protected $customer_vault = 'add_customer';
 
+    /**
+     * @return array|mixed
+     * @throws \Omnipay\Common\Exception\InvalidCreditCardException
+     * @throws \Omnipay\Common\Exception\InvalidRequestException
+     */
     public function getData()
     {
         $this->validate('card');

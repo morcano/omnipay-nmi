@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\NMI\Message;
+namespace Omnipay\NMI\Message\ThreeStepRedirect;
 
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RequestInterface;
@@ -9,7 +9,7 @@ use Omnipay\Common\Exception\InvalidResponseException;
 /**
  * NMI Three Step Redirect Response
  */
-class ThreeStepRedirectResponse extends AbstractResponse
+class Response extends AbstractResponse
 {
     /**
      * @param \Omnipay\Common\Message\RequestInterface

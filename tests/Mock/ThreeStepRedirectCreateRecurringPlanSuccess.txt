@@ -1,0 +1,8 @@
+HTTP/1.1 200 OK
+Date: Wed, 11 Feb 2015 17:03:20 GMT
+Server: Apache
+Access-Control-Allow-Origin: *
+Content-Length: 403
+Content-Type: text/xml; charset=utf-8
+
+<?xml version="1.0" encoding="UTF-8"?><response><result>1</result><result-text>Plan Added</result-text><result-code>100</result-code><action-type>add_plan</action-type><plan><payments>0</payments><name>test</name><plan-id>1</plan-id><amount>10.00</amount><month-frequency>1</month-frequency><day-of-month>1</day-of-month></plan></response>

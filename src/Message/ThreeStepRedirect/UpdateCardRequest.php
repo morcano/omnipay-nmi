@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnipay\NMI\Message;
+namespace Omnipay\NMI\Message\ThreeStepRedirect;
 
 /**
  * NMI Three Step Redirect Update Card Request
  */
-class ThreeStepRedirectUpdateCardRequest extends ThreeStepRedirectCreateCardRequest
+class UpdateCardRequest extends CreateCardRequest
 {
     /**
      * @var string
@@ -13,7 +13,8 @@ class ThreeStepRedirectUpdateCardRequest extends ThreeStepRedirectCreateCardRequ
     protected $type = 'update-customer';
 
     /**
-     * @return array
+     * @return array|mixed
+     * @throws \Omnipay\Common\Exception\InvalidRequestException
      */
     public function getData()
     {

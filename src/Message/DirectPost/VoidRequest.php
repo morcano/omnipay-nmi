@@ -1,13 +1,15 @@
 <?php
-namespace Omnipay\NMI\Message;
 
-/**
-* NMI Direct Post Void Request
-*/
-class DirectPostVoidRequest extends AbstractRequest
+namespace Omnipay\NMI\Message\DirectPost;
+
+class VoidRequest extends DirectPostAbstractRequest
 {
     protected $type = 'void';
 
+    /**
+     * @return array|mixed
+     * @throws \Omnipay\Common\Exception\InvalidRequestException
+     */
     public function getData()
     {
         $this->validate('transactionReference');

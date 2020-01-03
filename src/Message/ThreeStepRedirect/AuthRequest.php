@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnipay\NMI\Message;
+namespace Omnipay\NMI\Message\ThreeStepRedirect;
 
 /**
  * NMI Three Step Redirect Authorize Request
  */
-class ThreeStepRedirectAuthRequest extends ThreeStepRedirectAbstractRequest
+class AuthRequest extends ThreeStepRedirectAbstractRequest
 {
     /**
      * @var string
@@ -16,7 +16,7 @@ class ThreeStepRedirectAuthRequest extends ThreeStepRedirectAbstractRequest
      * Override Duplicate Transaction Detection checking (in seconds).
      *
      * @param boolean
-     * @return AbstractRequest Provides a fluent interface
+     * @return ThreeStepRedirectAbstractRequest Provides a fluent interface
      */
     public function setDupSeconds($value)
     {
@@ -35,7 +35,7 @@ class ThreeStepRedirectAuthRequest extends ThreeStepRedirectAbstractRequest
      * Sets the add customer.
      *
      * @param boolean
-     * @return AbstractRequest Provides a fluent interface
+     * @return ThreeStepRedirectAbstractRequest Provides a fluent interface
      */
     public function setAddCustomer($value)
     {
@@ -54,7 +54,7 @@ class ThreeStepRedirectAuthRequest extends ThreeStepRedirectAbstractRequest
      * Sets the update customer.
      *
      * @param string
-     * @return AbstractRequest Provides a fluent interface
+     * @return ThreeStepRedirectAbstractRequest Provides a fluent interface
      */
     public function setUpdateCustomer($value)
     {
@@ -70,7 +70,8 @@ class ThreeStepRedirectAuthRequest extends ThreeStepRedirectAbstractRequest
     }
 
     /**
-     * @return array
+     * @return array|mixed
+     * @throws \Omnipay\Common\Exception\InvalidRequestException
      */
     public function getData()
     {

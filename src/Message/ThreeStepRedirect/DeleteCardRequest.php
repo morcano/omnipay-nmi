@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnipay\NMI\Message;
+namespace Omnipay\NMI\Message\ThreeStepRedirect;
 
 /**
  * NMI Three Step Redirect Delete Card Request
  */
-class ThreeStepRedirectDeleteCardRequest extends ThreeStepRedirectAbstractRequest
+class DeleteCardRequest extends ThreeStepRedirectAbstractRequest
 {
     /**
      * @var string
@@ -13,18 +13,17 @@ class ThreeStepRedirectDeleteCardRequest extends ThreeStepRedirectAbstractReques
     protected $type = 'delete-customer';
 
     /**
-     * @return array
+     * @return array|mixed
+     * @throws \Omnipay\Common\Exception\InvalidRequestException
      */
     public function getData()
     {
         $this->validate('cardReference');
 
-        $data = array(
+        return [
             'api-key'           => $this->getApiKey(),
             'redirect-url'      => $this->getRedirectUrl(),
             'customer-vault-id' => $this->getCardReference(),
-        );
-
-        return $data;
+        ];
     }
 }
