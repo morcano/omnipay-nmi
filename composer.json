@@ -1,5 +1,5 @@
 {
-    "name": "simplepay/omnipay-nmi",
+    "name": "morcano/omnipay-nmi",
     "type": "library",
     "description": "NMI (Network Merchants Inc.) driver for the Omnipay PHP payment processing library",
     "keywords": [
@@ -26,8 +26,10 @@
         "psr-4": { "Omnipay\\NMI\\" : "src/" }
     },
     "require": {
-        "league/omnipay": "^3",
-        "monolog/monolog": "^1.23",
-        "omnipay/tests": "^3.1"
+        "league/omnipay": "^3"
+    },
+    "require-dev": {
+        "omnipay/tests": "^3.1",
+        "monolog/monolog": "^1.23"
     }
 }
