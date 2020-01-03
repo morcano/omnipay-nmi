@@ -12,7 +12,7 @@ use SimpleXMLElement;
  */
 abstract class ThreeStepRedirectAbstractRequest extends \Omnipay\NMI\Message\NetworkMerchantsAbstractRequest
 {
-    use Loggable;
+    //use Loggable;
 
     /**
      * @var string
@@ -276,8 +276,9 @@ abstract class ThreeStepRedirectAbstractRequest extends \Omnipay\NMI\Message\Net
         );
 
         $this->response = new Response($this, static::xmlDecode($httpResponse));
-        $this->logAPICall('POST', $this->getEndpoint(), $data, $httpResponse, $this->response);
 
+        // TODO: Replace log logic from master branch
+        //$this->logAPICall('POST', $this->getEndpoint(), $data, $httpResponse, $this->response);
         return $this->response;
     }
 
