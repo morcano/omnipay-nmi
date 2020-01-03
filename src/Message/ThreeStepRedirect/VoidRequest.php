@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnipay\NMI\Message;
+namespace Omnipay\NMI\Message\ThreeStepRedirect;
 
 /**
  * NMI Three Step Redirect Void Request
  */
-class ThreeStepRedirectVoidRequest extends ThreeStepRedirectAbstractRequest
+class VoidRequest extends ThreeStepRedirectAbstractRequest
 {
     /**
      * @var string
@@ -13,7 +13,8 @@ class ThreeStepRedirectVoidRequest extends ThreeStepRedirectAbstractRequest
     protected $type = 'void';
 
     /**
-     * @return array
+     * @return array|mixed
+     * @throws \Omnipay\Common\Exception\InvalidRequestException
      */
     public function getData()
     {

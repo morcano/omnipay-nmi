@@ -294,11 +294,11 @@ class DirectPostGateway extends AbstractGateway
     /**
      * Transaction sales are submitted and immediately flagged for settlement.
      * @param  array  $parameters
-     * @return \Omnipay\NMI\Message\DirectPostSaleRequest
+     * @return \Omnipay\NMI\Message\DirectPost\SaleRequest
      */
     public function sale(array $parameters = array())
     {
-        return $this->createRequest('\Omnipay\NMI\Message\DirectPostSaleRequest', $parameters);
+        return $this->createRequest('\Omnipay\NMI\Message\DirectPost\SaleRequest', $parameters);
     }
 
     /**
@@ -307,11 +307,11 @@ class DirectPostGateway extends AbstractGateway
      * the capture transaction type. Authorizations typically remain active for
      * three to seven business days.
      * @param  array  $parameters
-     * @return \Omnipay\NMI\Message\DirectPostAuthRequest
+     * @return \Omnipay\NMI\Message\DirectPost\AuthRequest
      */
     public function auth(array $parameters = array())
     {
-        return $this->createRequest('\Omnipay\NMI\Message\DirectPostAuthRequest', $parameters);
+        return $this->createRequest('\Omnipay\NMI\Message\DirectPost\AuthRequest', $parameters);
     }
 
     /**
@@ -319,11 +319,11 @@ class DirectPostGateway extends AbstractGateway
      * Only authorizations can be captured. Captures can be submitted for an
      * amount equal to or less than the original authorization.
      * @param  array  $parameters
-     * @return \Omnipay\NMI\Message\DirectPostCaptureRequest
+     * @return \Omnipay\NMI\Message\DirectPost\CaptureRequest
      */
     public function capture(array $parameters = array())
     {
-        return $this->createRequest('\Omnipay\NMI\Message\DirectPostCaptureRequest', $parameters);
+        return $this->createRequest('\Omnipay\NMI\Message\DirectPost\CaptureRequest', $parameters);
     }
 
     /**
@@ -331,22 +331,22 @@ class DirectPostGateway extends AbstractGateway
      * In addition, non-captured authorizations can be voided to prevent any
      * future capture. Voids can only occur if the transaction has not been settled.
      * @param  array  $parameters
-     * @return \Omnipay\NMI\Message\DirectPostVoidRequest
+     * @return \Omnipay\NMI\Message\DirectPost\VoidRequest
      */
     public function void(array $parameters = array())
     {
-        return $this->createRequest('\Omnipay\NMI\Message\DirectPostVoidRequest', $parameters);
+        return $this->createRequest('\Omnipay\NMI\Message\DirectPost\VoidRequest', $parameters);
     }
 
     /**
      * Transaction refunds will reverse a previously settled transaction. If the
      * transaction has not been settled, it must be voided instead of refunded.
      * @param  array  $parameters
-     * @return \Omnipay\NMI\Message\DirectPostRefundRequest
+     * @return \Omnipay\NMI\Message\DirectPost\RefundRequest
      */
     public function refund(array $parameters = array())
     {
-        return $this->createRequest('\Omnipay\NMI\Message\DirectPostRefundRequest', $parameters);
+        return $this->createRequest('\Omnipay\NMI\Message\DirectPost\RefundRequest', $parameters);
     }
 
     /**
@@ -354,37 +354,49 @@ class DirectPostGateway extends AbstractGateway
      * originally processed through the Gateway. In most situations credits are
      * disabled as transaction refunds should be used instead.
      * @param  array  $parameters
-     * @return \Omnipay\NMI\Message\DirectPostCreditRequest
+     * @return \Omnipay\NMI\Message\DirectPost\CreditRequest
      */
     public function credit(array $parameters = array())
     {
-        return $this->createRequest('\Omnipay\NMI\Message\DirectPostCreditRequest', $parameters);
+        return $this->createRequest('\Omnipay\NMI\Message\DirectPost\CreditRequest', $parameters);
     }
 
     /**
      * @param array $parameters
-     * @return \Omnipay\NMI\Message\CreateCardRequest
+     * @return \Omnipay\NMI\Message\DirectPost\CreateCardRequest
      */
     public function createCard(array $parameters = array())
     {
-        return $this->createRequest('\Omnipay\NMI\Message\DirectPostCreateCardRequest', $parameters);
+        return $this->createRequest('\Omnipay\NMI\Message\DirectPost\CreateCardRequest', $parameters);
     }
 
     /**
      * @param array $parameters
-     * @return \Omnipay\NMI\Message\UpdateCardRequest
+     * @return \Omnipay\NMI\Message\DirectPost\UpdateCardRequest
      */
     public function updateCard(array $parameters = array())
     {
-        return $this->createRequest('\Omnipay\NMI\Message\DirectPostUpdateCardRequest', $parameters);
+        return $this->createRequest('\Omnipay\NMI\Message\DirectPost\UpdateCardRequest', $parameters);
     }
 
     /**
      * @param array $parameters
-     * @return \Omnipay\NMI\Message\DeleteCardRequest
+     * @return \Omnipay\NMI\Message\DirectPost\DeleteCardRequest
      */
     public function deleteCard(array $parameters = array())
     {
-        return $this->createRequest('\Omnipay\NMI\Message\DirectPostDeleteCardRequest', $parameters);
+        return $this->createRequest('\Omnipay\NMI\Message\DirectPost\DeleteCardRequest', $parameters);
+    }
+
+    /**
+     * Create recurring plan
+     * https://secure.nmi.com/merchants/resources/integration/integration_portal.php?tid=d17dd8ba7e1cba58a05e5705afdd5807#recurring_variables
+     *
+     * @param array $parameters
+     * @return \Omnipay\NMI\Message\DirectPost\CreateRecurringPlanRequest
+     */
+    public function createRecurringPlan(array $parameters = array())
+    {
+        return $this->createRequest('\Omnipay\NMI\Message\DirectPost\CreateRecurringPlanRequest', $parameters);
     }
 }

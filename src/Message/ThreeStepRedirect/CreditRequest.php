@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnipay\NMI\Message;
+namespace Omnipay\NMI\Message\ThreeStepRedirect;
 
 /**
  * NMI Three Step Redirect Credit Request
  */
-class ThreeStepRedirectCreditRequest extends ThreeStepRedirectAuthRequest
+class CreditRequest extends AuthRequest
 {
     /**
      * @var string

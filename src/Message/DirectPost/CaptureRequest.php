@@ -1,13 +1,18 @@
 <?php
-namespace Omnipay\NMI\Message;
+
+namespace Omnipay\NMI\Message\DirectPost;
 
 /**
 * NMI Direct Post Capture Request
 */
-class DirectPostCaptureRequest extends AbstractRequest
+class CaptureRequest extends DirectPostAbstractRequest
 {
     protected $type = 'capture';
 
+    /**
+     * @return array|mixed
+     * @throws \Omnipay\Common\Exception\InvalidRequestException
+     */
     public function getData()
     {
         $this->validate('transactionReference');

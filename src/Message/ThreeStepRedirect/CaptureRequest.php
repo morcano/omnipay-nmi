@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnipay\NMI\Message;
+namespace Omnipay\NMI\Message\ThreeStepRedirect;
 
 /**
  * NMI Three Step Redirect Capture Request
  */
-class ThreeStepRedirectCaptureRequest extends ThreeStepRedirectAbstractRequest
+class CaptureRequest extends ThreeStepRedirectAbstractRequest
 {
     /**
      * @var string
@@ -13,7 +13,8 @@ class ThreeStepRedirectCaptureRequest extends ThreeStepRedirectAbstractRequest
     protected $type = 'capture';
 
     /**
-     * @return array
+     * @return array|mixed
+     * @throws \Omnipay\Common\Exception\InvalidRequestException
      */
     public function getData()
     {

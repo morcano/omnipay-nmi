@@ -1,14 +1,12 @@
 <?php
-namespace Omnipay\NMI\Message;
+
+namespace Omnipay\NMI\Message\DirectPost;
 
 use Omnipay\Common\Message\AbstractResponse;
 use Omnipay\Common\Message\RequestInterface;
 use Omnipay\Common\Exception\InvalidResponseException;
 
-/**
-* NMI Direct Post Response
-*/
-class DirectPostResponse extends AbstractResponse
+class Response extends AbstractResponse
 {
     public function __construct(RequestInterface $request, $data)
     {

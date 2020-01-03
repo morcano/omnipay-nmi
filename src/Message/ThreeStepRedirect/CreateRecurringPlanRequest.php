@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnipay\NMI\Message;
+namespace Omnipay\NMI\Message\ThreeStepRedirect;
 
 /**
  * NMI Three Step Redirect Complete Request
  */
-class ThreeStepRedirectCreatePlanRequest extends ThreeStepRedirectAbstractRequest
+class CreateRecurringPlanRequest extends ThreeStepRedirectAbstractRequest
 {
     /**
      * @var string
@@ -18,9 +18,8 @@ class ThreeStepRedirectCreatePlanRequest extends ThreeStepRedirectAbstractReques
      */
     public function getData()
     {
-        $data['api-key'] = $this->getApiKey();
-
         $data = [
+            'api-key' => $this->getApiKey(),
             'plan' => [
                 'payments' => $this->getPayments(),
                 'name' => $this->getName(),
@@ -46,7 +45,7 @@ class ThreeStepRedirectCreatePlanRequest extends ThreeStepRedirectAbstractReques
 
     /**
      * @param $value
-     * @return ThreeStepRedirectCreatePlanRequest
+     * @return CreateRecurringPlanRequest
      */
     public function setName($value)
     {
@@ -63,7 +62,7 @@ class ThreeStepRedirectCreatePlanRequest extends ThreeStepRedirectAbstractReques
 
     /**
      * @param $value
-     * @return ThreeStepRedirectCreatePlanRequest
+     * @return CreateRecurringPlanRequest
      */
     public function setPayments($value)
     {
@@ -88,7 +87,7 @@ class ThreeStepRedirectCreatePlanRequest extends ThreeStepRedirectAbstractReques
 
     /**
      * @param $value
-     * @return ThreeStepRedirectCreatePlanRequest
+     * @return CreateRecurringPlanRequest
      */
     public function setPlanId($value)
     {
@@ -105,7 +104,7 @@ class ThreeStepRedirectCreatePlanRequest extends ThreeStepRedirectAbstractReques
 
     /**
      * @param $value
-     * @return ThreeStepRedirectCreatePlanRequest
+     * @return CreateRecurringPlanRequest
      */
     public function setDayFrequency($value)
     {
@@ -122,7 +121,7 @@ class ThreeStepRedirectCreatePlanRequest extends ThreeStepRedirectAbstractReques
 
     /**
      * @param $value
-     * @return ThreeStepRedirectCreatePlanRequest
+     * @return CreateRecurringPlanRequest
      */
     public function setMonthFrequency($value)
     {
@@ -139,7 +138,7 @@ class ThreeStepRedirectCreatePlanRequest extends ThreeStepRedirectAbstractReques
 
     /**
      * @param $value
-     * @return ThreeStepRedirectCreatePlanRequest
+     * @return CreateRecurringPlanRequest
      */
     public function setDayOfMonth($value)
     {

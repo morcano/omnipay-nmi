@@ -27,7 +27,8 @@
     },
     "require": {
         "league/omnipay": "^3",
-        "monolog/monolog": "^1.23"
+        "monolog/monolog": "^1.23",
+        "omnipay/tests": "^3.1"
     },
     "extra": {
         "branch-alias": {

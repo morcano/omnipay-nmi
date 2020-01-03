@@ -1,10 +1,11 @@
 <?php
-namespace Omnipay\NMI\Message;
+
+namespace Omnipay\NMI\Message\DirectPost;
 
 /**
  * NMI Direct Post Authorize Request
  */
-class DirectPostAuthRequest extends AbstractRequest
+class AuthRequest extends DirectPostAbstractRequest
 {
     protected $type = 'auth';
 
@@ -20,7 +21,7 @@ class DirectPostAuthRequest extends AbstractRequest
      * Sets the first merchant defined field.
      *
      * @param string
-     * @return AbstractRequest Provides a fluent interface
+     * @return DirectPostAbstractRequest Provides a fluent interface
      */
     public function setMerchantDefinedField1($value)
     {
@@ -39,7 +40,7 @@ class DirectPostAuthRequest extends AbstractRequest
      * Sets the second merchant defined field.
      *
      * @param string
-     * @return AbstractRequest Provides a fluent interface
+     * @return DirectPostAbstractRequest Provides a fluent interface
      */
     public function setMerchantDefinedField2($value)
     {
@@ -58,7 +59,7 @@ class DirectPostAuthRequest extends AbstractRequest
      * Sets the third merchant defined field.
      *
      * @param string
-     * @return AbstractRequest Provides a fluent interface
+     * @return DirectPostAbstractRequest Provides a fluent interface
      */
     public function setMerchantDefinedField3($value)
     {
@@ -77,7 +78,7 @@ class DirectPostAuthRequest extends AbstractRequest
      * Sets the fourth merchant defined field.
      *
      * @param string
-     * @return AbstractRequest Provides a fluent interface
+     * @return DirectPostAbstractRequest Provides a fluent interface
      */
     public function setMerchantDefinedField4($value)
     {

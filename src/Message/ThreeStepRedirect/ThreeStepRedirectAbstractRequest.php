@@ -1,6 +1,6 @@
 <?php
 
-namespace Omnipay\NMI\Message;
+namespace Omnipay\NMI\Message\ThreeStepRedirect;
 
 use Omnipay\Common\CreditCard;
 use Omnipay\NMI\Traits\Loggable;
@@ -10,7 +10,7 @@ use SimpleXMLElement;
 /**
  * NMI Three Step Redirect Abstract Request
  */
-abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
+abstract class ThreeStepRedirectAbstractRequest extends \Omnipay\NMI\Message\NetworkMerchantsAbstractRequest
 {
     use Loggable;
 
@@ -74,7 +74,7 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
      * Sets the card.
      *
      * @param CreditCard $value
-     * @return AbstractRequest Provides a fluent interface
+     * @return ThreeStepRedirectAbstractRequest Provides a fluent interface
      */
     public function setCard($value)
     {
@@ -114,7 +114,7 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
      * Sets the first merchant defined field.
      *
      * @param string
-     * @return AbstractRequest Provides a fluent interface
+     * @return ThreeStepRedirectAbstractRequest Provides a fluent interface
      */
     public function setMerchantDefinedField1($value)
     {
@@ -133,7 +133,7 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
      * Sets the second merchant defined field.
      *
      * @param string
-     * @return AbstractRequest Provides a fluent interface
+     * @return ThreeStepRedirectAbstractRequest Provides a fluent interface
      */
     public function setMerchantDefinedField2($value)
     {
@@ -152,7 +152,7 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
      * Sets the third merchant defined field.
      *
      * @param string
-     * @return AbstractRequest Provides a fluent interface
+     * @return ThreeStepRedirectAbstractRequest Provides a fluent interface
      */
     public function setMerchantDefinedField3($value)
     {
@@ -171,7 +171,7 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
      * Sets the fourth merchant defined field.
      *
      * @param string
-     * @return AbstractRequest Provides a fluent interface
+     * @return ThreeStepRedirectAbstractRequest Provides a fluent interface
      */
     public function setMerchantDefinedField4($value)
     {
@@ -257,7 +257,7 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
 
     /**
      * @param array $data
-     * @return \Omnipay\NMI\Message\ThreeStepRedirectResponse
+     * @return \Omnipay\NMI\Message\ThreeStepRedirect\Response
      * @throws \Exception
      */
     public function sendData($data)
@@ -275,7 +275,7 @@ abstract class ThreeStepRedirectAbstractRequest extends AbstractRequest
             $document->asXML()
         );
 
-        $this->response = new ThreeStepRedirectResponse($this, static::xmlDecode($httpResponse));
+        $this->response = new Response($this, static::xmlDecode($httpResponse));
         $this->logAPICall('POST', $this->getEndpoint(), $data, $httpResponse, $this->response);
 
         return $this->response;

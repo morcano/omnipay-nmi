@@ -1,11 +1,11 @@
 <?php
 
-namespace Omnipay\NMI\Message;
+namespace Omnipay\NMI\Message\ThreeStepRedirect;
 
 /**
  * NMI Three Step Redirect Create Card Request
  */
-class ThreeStepRedirectCreateCardRequest extends ThreeStepRedirectAbstractRequest
+class CreateCardRequest extends ThreeStepRedirectAbstractRequest
 {
     /**
      * @var string
@@ -13,7 +13,8 @@ class ThreeStepRedirectCreateCardRequest extends ThreeStepRedirectAbstractReques
     protected $type = 'add-customer';
 
     /**
-     * @return array
+     * @return array|mixed
+     * @throws \Omnipay\Common\Exception\InvalidRequestException
      */
     public function getData()
     {
@@ -24,12 +25,10 @@ class ThreeStepRedirectCreateCardRequest extends ThreeStepRedirectAbstractReques
             'redirect-url' => $this->getRedirectUrl(),
         );
 
-        $data = array_merge(
+       return array_merge(
             $data,
             $this->getBillingData(),
             $this->getShippingData()
         );
-
-        return $data;
     }
 }
