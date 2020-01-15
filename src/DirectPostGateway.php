@@ -399,4 +399,13 @@ class DirectPostGateway extends AbstractGateway
     {
         return $this->createRequest('\Omnipay\NMI\Message\DirectPost\CreateRecurringPlanRequest', $parameters);
     }
+
+    /**
+     * @param array $parameters
+     * @return \Omnipay\NMI\Message\DirectPost\AddSubscriptionToExistingPlanRequest
+     */
+    public function addSubscriptionToExistingPlan(array $parameters = array())
+    {
+        return $this->createRequest('\Omnipay\NMI\Message\DirectPost\AddSubscriptionToExistingPlanRequest', $parameters);
+    }
 }

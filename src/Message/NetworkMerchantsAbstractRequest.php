@@ -87,4 +87,89 @@ abstract class NetworkMerchantsAbstractRequest extends \Omnipay\Common\Message\A
     {
         return $this->endpoint;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getOrderId()
+    {
+        return $this->getParameter('orderid');
+    }
+
+    /**
+     * @param $value
+     * @return NetworkMerchantsAbstractRequest
+     */
+    public function setOrderId($value)
+    {
+        return $this->setParameter('orderid', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getOrderDescription()
+    {
+        return $this->getParameter('orderdescription');
+    }
+
+    /**
+     * @param $value
+     * @return NetworkMerchantsAbstractRequest
+     */
+    public function setOrderDescription($value)
+    {
+        return $this->setParameter('orderdescription', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTax()
+    {
+        return $this->getParameter('tax');
+    }
+
+    /**
+     * @param $value
+     * @return NetworkMerchantsAbstractRequest
+     */
+    public function setTax($value)
+    {
+        return $this->setParameter('tax', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShipping()
+    {
+        return $this->getParameter('shipping');
+    }
+
+    /**
+     * @param $value
+     * @return NetworkMerchantsAbstractRequest
+     */
+    public function setShipping($value)
+    {
+        return $this->setParameter('shipping', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPONumber()
+    {
+        return $this->getParameter('ponumber');
+    }
+
+    /**
+     * @param $value
+     * @return NetworkMerchantsAbstractRequest
+     */
+    public function setPONumber($value)
+    {
+        return $this->setParameter('ponumber', $value);
+    }
 }
