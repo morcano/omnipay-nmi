@@ -86,6 +86,23 @@ abstract class ThreeStepRedirectAbstractRequest extends \Omnipay\NMI\Message\Net
     }
 
     /**
+     * @return mixed
+     */
+    public function getBillingInfo()
+    {
+        return $this->getParameter('billing_info');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setBillingInfo($value)
+    {
+        return $this->setParameter('billing_info', $value);
+    }
+
+    /**
      * @return string
      */
     public function getSecCode()
@@ -179,6 +196,329 @@ abstract class ThreeStepRedirectAbstractRequest extends \Omnipay\NMI\Message\Net
     }
 
     /**
+     * @return mixed
+     */
+    public function getBillingFirstName()
+    {
+        return $this->getParameter('billing_first_name');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setBillingFirstName($value)
+    {
+        return $this->setParameter('billing_first_name', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBillingLastName()
+    {
+        return $this->getParameter('billing_last_name');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setBillingLastName($value)
+    {
+        return $this->setParameter('billing_last_name', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBillingAddress1()
+    {
+        return $this->getParameter('billing_address1');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setBillingAddress1($value)
+    {
+        return $this->setParameter('billing_address1', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBillingCity()
+    {
+        return $this->getParameter('billing_city');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setBillingCity($value)
+    {
+        return $this->setParameter('billing_city', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBillingState()
+    {
+        return $this->getParameter('billing_state');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setBillingState($value)
+    {
+        return $this->setParameter('billing_state', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBillingPostcode()
+    {
+        return $this->getParameter('billing_postcode');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setBillingPostcode($value)
+    {
+        return $this->setParameter('billing_postcode', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBillingCountry()
+    {
+        return $this->getParameter('billing_country');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setBillingCountry($value)
+    {
+        return $this->setParameter('billing_country', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBillingPhone()
+    {
+        return $this->getParameter('billing_phone');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setBillingPhone($value)
+    {
+        return $this->setParameter('billing_phone', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShippingFirstName()
+    {
+        return $this->getParameter('shipping_first_name');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setShippingFirstName($value)
+    {
+        return $this->setParameter('shipping_first_name', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShippingLastName()
+    {
+        return $this->getParameter('shipping_last_name');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setShippingLastName($value)
+    {
+        return $this->setParameter('shipping_last_name', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShippingAddress1()
+    {
+        return $this->getParameter('shipping_address1');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setShippingAddress1($value)
+    {
+        return $this->setParameter('shipping_address1', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShippingCity()
+    {
+        return $this->getParameter('shipping_city');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setShippingCity($value)
+    {
+        return $this->setParameter('shipping_city', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShippingState()
+    {
+        return $this->getParameter('shipping_state');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setShippingState($value)
+    {
+        return $this->setParameter('shipping_state', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShippingPostcode()
+    {
+        return $this->getParameter('shipping_postcode');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setShippingPostcode($value)
+    {
+        return $this->setParameter('shipping_postcode', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShippingCountry()
+    {
+        return $this->getParameter('shipping_country');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setShippingCountry($value)
+    {
+        return $this->setParameter('shipping_country', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShippingEmail()
+    {
+        return $this->getParameter('shipping_email');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setShippingEmail($value)
+    {
+        return $this->setParameter('shipping_email', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->getParameter('email');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setEmail($value)
+    {
+        return $this->setParameter('email', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShippingCompany()
+    {
+        return $this->getParameter('shipping_company');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setShippingCompany($value)
+    {
+        return $this->setParameter('shipping_company', $value);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShippingAddress2()
+    {
+        return $this->getParameter('shipping_address2');
+    }
+
+    /**
+     * @param $value
+     * @return ThreeStepRedirectAbstractRequest
+     */
+    public function setShippingAddress2($value)
+    {
+        return $this->setParameter('shipping_address2', $value);
+    }
+
+    /**
      * @return array
      */
     protected function getOrderData()
@@ -208,24 +548,19 @@ abstract class ThreeStepRedirectAbstractRequest extends \Omnipay\NMI\Message\Net
      */
     protected function getBillingData()
     {
-        $data = array();
+        $data = [];
 
-        if ($card = $this->getCard()) {
-            $data['billing'] = array(
-                'first-name' => $card->getBillingFirstName(),
-                'last-name'  => $card->getBillingLastName(),
-                'address1'   => $card->getBillingAddress1(),
-                'city'       => $card->getBillingCity(),
-                'state'      => $card->getBillingState(),
-                'postal'     => $card->getBillingPostcode(),
-                'country'    => $card->getBillingCountry(),
-                'phone'      => $card->getBillingPhone(),
-                'email'      => $card->getEmail(),
-                'company'    => $card->getBillingCompany(),
-                'address2'   => $card->getBillingAddress2(),
-                'fax'        => $card->getBillingFax(),
-            );
-        }
+        $data['billing'] = [
+            'first-name' => $this->getBillingFirstName(),
+            'last-name'  => $this->getBillingLastName(),
+            'address1'   => $this->getBillingAddress1(),
+            'city'       => $this->getBillingCity(),
+            'state'      => $this->getBillingState(),
+            'postal'     => $this->getBillingPostcode(),
+            'country'    => $this->getBillingCountry(),
+            'phone'      => $this->getBillingPhone(),
+            'email'      => $this->getEmail(),
+        ];
 
         return $data;
     }
@@ -235,22 +570,20 @@ abstract class ThreeStepRedirectAbstractRequest extends \Omnipay\NMI\Message\Net
      */
     protected function getShippingData()
     {
-        $data = array();
+        $data = [];
 
-        if ($card = $this->getCard()) {
-            $data['shipping'] = array(
-                'first-name' => $card->getShippingFirstName(),
-                'last-name'  => $card->getShippingLastName(),
-                'address1'   => $card->getShippingAddress1(),
-                'city'       => $card->getShippingCity(),
-                'state'      => $card->getShippingState(),
-                'postal'     => $card->getShippingPostcode(),
-                'country'    => $card->getShippingCountry(),
-                'email'      => $card->getEmail(),
-                'company'    => $card->getShippingCompany(),
-                'address2'   => $card->getShippingAddress2(),
-            );
-        }
+        $data['shipping'] = [
+            'first-name' => $this->getShippingFirstName(),
+            'last-name'  => $this->getShippingLastName(),
+            'address1'   => $this->getShippingAddress1(),
+            'city'       => $this->getShippingCity(),
+            'state'      => $this->getShippingState(),
+            'postal'     => $this->getShippingPostcode(),
+            'country'    => $this->getShippingCountry(),
+            'email'      => $this->getEmail(),
+            'company'    => $this->getShippingCompany(),
+            'address2'   => $this->getShippingAddress2(),
+        ];
 
         return $data;
     }

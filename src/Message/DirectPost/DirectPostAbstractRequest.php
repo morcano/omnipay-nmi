@@ -139,56 +139,6 @@ abstract class DirectPostAbstractRequest extends \Omnipay\NMI\Message\NetworkMer
         return $this->setParameter('descriptor_url', $value);
     }
 
-    public function getOrderId()
-    {
-        return $this->getParameter('orderid');
-    }
-
-    public function setOrderId($value)
-    {
-        return $this->setParameter('orderid', $value);
-    }
-
-    public function getOrderDescription()
-    {
-        return $this->getParameter('orderdescription');
-    }
-
-    public function setOrderDescription($value)
-    {
-        return $this->setParameter('orderdescription', $value);
-    }
-
-    public function getTax()
-    {
-        return $this->getParameter('tax');
-    }
-
-    public function setTax($value)
-    {
-        return $this->setParameter('tax', $value);
-    }
-
-    public function getShipping()
-    {
-        return $this->getParameter('shipping');
-    }
-
-    public function setShipping($value)
-    {
-        return $this->setParameter('shipping', $value);
-    }
-
-    public function getPONumber()
-    {
-        return $this->getParameter('ponumber');
-    }
-
-    public function setPONumber($value)
-    {
-        return $this->setParameter('ponumber', $value);
-    }
-
     public function getCardholderAuth()
     {
         return $this->getParameter('cardholder_auth');

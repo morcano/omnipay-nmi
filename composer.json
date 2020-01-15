@@ -27,9 +27,5 @@
     },
     "require": {
         "league/omnipay": "^3"
-    },
-    "require-dev": {
-        "omnipay/tests": "^3.1",
-        "monolog/monolog": "^1.23"
     }
 }
