@@ -180,13 +180,4 @@ class ThreeStepRedirectGateway extends AbstractGateway
     {
         return $this->createRequest('\Omnipay\NMI\Message\ThreeStepRedirect\CreateRecurringPlanRequest', $parameters);
     }
-
-    /**
-     * @param array $parameters
-     * @return \Omnipay\NMI\Message\AddSubscriptionToExistingPlanRequest
-     */
-    public function addSubscriptionToExistingPlan(array $parameters = array())
-    {
-        return $this->createRequest('\Omnipay\NMI\Message\ThreeStepRedirect\AddSubscriptionToExistingPlanRequest', $parameters);
-    }
 }
